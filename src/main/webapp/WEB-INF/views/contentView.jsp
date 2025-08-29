@@ -17,7 +17,7 @@
 	
 	<a href="boardList" >목록으로</a>
 	<a href="contentModify?bnum=${boardDto.bnum }">수정</a>
-	<a href="contentDelete">삭제</a>
+	<a href="deleteOk?bnum=${boardDto.bnum}">삭제</a>
 	
 </body>
 </html>

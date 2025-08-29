@@ -25,7 +25,7 @@ public interface IDao {
 	// 게시판 글 갯수 추상 메서드 선언
 	public int contentCountDao();
 	
-	// 게시판 글 갯수 추상 메서드 선언
+	// 게시판 글 조회수 증가 추상 메서드 선언
 	public void upBhitDao(int bnum);
 }
  
