@@ -29,13 +29,21 @@
 		<beans:property name="password" value="12345"/>
 	</beans:bean>
 	
-	<!-- jdbc Template 설정 -->
+	<!-- jdbc Template 설정 
 	<beans:bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<beans:property name="dataSource" ref="dataSource"/>
 	</beans:bean>
+	-->
 	
-	<!--  -->
+	<!-- MyBatis 설정 -->
+	<beans:bean name="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource"/>
+		<beans:property name="mapperLocations" value="classpath:com/ddu/mybatistest/mapper/*.xml"/>
+	</beans:bean>
 	
+	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<beans:constructor-arg index="0" ref="sqlSessionFactory"/>
+	</beans:bean>
 	
 	<context:component-scan base-package="com.ddu.mybatistest" />
 	
